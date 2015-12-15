@@ -1,0 +1,16 @@
+{
+  "name": "recursive-link-checker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "broken-link-checker": "https://github.com/stevenvachon/broken-link-checker.git#master",
+    "chalk": "^1.1.1",
+    "yargs": "^3.31.0"
+  }
+}
