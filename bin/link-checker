@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var cliHandler = require('../lib/cli-handler');
+var program = require('commander');
+program._name = 'link-checker';
+
+program
+.arguments('<url>')
+.option('-A, --no-assets', 'Don’t check linked assets like JavaScript and CSS')
+.option('-I, --no-images', 'Don’t check images')
+.option('-L, --no-links', 'Don’t check hyperlinks')
+.option('-R, --no-recursive', 'Don’t recursively follow links')
+.action(function (url, env) {
+  cliHandler(url);
+});
+
+// Away we go!
+program.parse(process.argv);
+
+// Commander won't quit if no argument was provided, which is weird. We have to
+// catch this scenario and quit for it.
+if(typeof program.args[0] === 'undefined') {
+  program.help();
+  process.exit(1);
+}
