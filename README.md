@@ -5,7 +5,7 @@ Crawls a page/site and reports broken links or images.
 ## Installation
 
 ```
-npm install -g link-checker
+npm install -g recursive-link-checker
 ```
 
 or, just pull the Docker image:
@@ -13,6 +13,8 @@ or, just pull the Docker image:
 ```
 docker pull ktbartholomew/link-checker
 ```
+
+**Don't forget:** the name of the install package and the name of the binary are different. You're installing `recursive-link-checker` but will actually use the application as just `link-checker`.
 
 ## Usage
 
