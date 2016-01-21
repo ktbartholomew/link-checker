@@ -6,17 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Keith Bartholomew <keith@keithbartholomew.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "broken-link-checker": "https://github.com/stevenvachon/broken-link-checker.git#master",
-    "chalk": "^1.1.1",
     "commander": "^2.9.0",
     "jsdom": "^7.2.2",
     "lodash": "^4.0.0",
     "q": "^1.4.1",
-    "superagent": "^1.7.0",
-    "yargs": "^3.31.0"
+    "superagent": "^1.7.0"
   },
   "bin": {
     "link-checker": "bin/link-checker"
