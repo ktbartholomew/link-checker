@@ -10,6 +10,7 @@ program
 .option('-I, --no-images', 'Don’t check images')
 .option('-L, --no-links', 'Don’t check hyperlinks')
 .option('-R, --no-recursive', 'Don’t recursively follow links')
+.option('-v, --verbose', 'Be more verbose')
 .action(function (url, env) {
   cliHandler(url);
 });
