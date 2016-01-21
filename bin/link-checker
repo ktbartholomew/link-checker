@@ -6,10 +6,10 @@ program._name = 'link-checker';
 
 program
 .arguments('<url>')
+.option('-c, --concurrency <num>', 'How many links to check concurrently. Default: 5', parseInt, 5)
 .option('-A, --no-assets', 'Don’t check linked assets like JavaScript and CSS')
 .option('-I, --no-images', 'Don’t check images')
 .option('-L, --no-links', 'Don’t check hyperlinks')
-.option('-R, --no-recursive', 'Don’t recursively follow links')
 .option('-v, --verbose', 'Be more verbose')
 .action(function (url, env) {
   cliHandler(url);
