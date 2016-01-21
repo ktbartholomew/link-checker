@@ -1,6 +1,6 @@
 {
-  "name": "link-checker",
-  "version": "0.1.0",
+  "name": "recursive-link-checker",
+  "version": "0.1.1",
   "description": "Crawls a page/site and reports broken links or images.",
   "main": "bin/link-checker",
   "scripts": {
