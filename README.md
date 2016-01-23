@@ -41,13 +41,30 @@ $ bin/link-checker http://localhost:8080/
 Crawl complete! 1/22 links were broken (4.5% broken)
 ```
 
-### options
+### Options
 
 ```
 -h, --help               output usage information
 -c, --concurrency <num>  How many links to check concurrently. Default: 5
+-t, --threshold <num>    Exit with error if this many broken links are found. Percentage of broken/total if < 1, count of total broken links if >= 1
 -A, --no-assets          Don’t check linked assets like JavaScript and CSS
 -I, --no-images          Don’t check images
 -L, --no-links           Don’t check hyperlinks
 -v, --verbose            Be more verbose
+```
+
+### Exit codes
+
+An exit code of 0 is a success and an exit code of 1 is a failure. The exit code can be manipulated by providing a value to `--threshold`.
+
+To fail if 5% or more of all crawled links are broken (this is the default failure threshold):
+
+```
+$ link-checker --threshold 0.05 <url>
+```
+
+To fail if 5 or more links are broken:
+
+```
+$ link-checker --threshold 5 <url>
 ```

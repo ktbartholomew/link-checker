@@ -7,6 +7,7 @@ program._name = 'link-checker';
 program
 .arguments('<url>')
 .option('-c, --concurrency <num>', 'How many links to check concurrently. Default: 5', parseInt, 5)
+.option('-t, --threshold <num>', 'Exit with error if this many broken links are found. Percentage of broken/total if < 1, count of total broken links if >= 1', parseFloat, 0.05)
 .option('-A, --no-assets', 'Don’t check linked assets like JavaScript and CSS')
 .option('-I, --no-images', 'Don’t check images')
 .option('-L, --no-links', 'Don’t check hyperlinks')
