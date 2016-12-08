@@ -11,6 +11,7 @@ program
 .option('-A, --no-assets', 'Don’t check linked assets like JavaScript and CSS')
 .option('-I, --no-images', 'Don’t check images')
 .option('-L, --no-links', 'Don’t check hyperlinks')
+.option('-S, --no-insecure', 'Don’t check for linked resources loaded over HTTP when accessing HTTPS urls')
 .option('-v, --verbose', 'Be more verbose')
 .action(function (url, env) {
   cliHandler(url);
