@@ -1,6 +1,6 @@
 # Link Checker
 
-Crawls a page/site and reports broken links or images.
+Crawls a page/site and reports broken links or assets and checks for insecure requests on secured URLs.
 
 ## Installation
 
