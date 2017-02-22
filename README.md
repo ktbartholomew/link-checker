@@ -1,6 +1,6 @@
 # Link Checker
 
-Crawls a page/site and reports broken links or images.
+Crawls a page/site and reports broken links or assets and checks for insecure requests on secured URLs.
 
 ## Installation
 
@@ -34,11 +34,18 @@ Either way, when you run it, it looks something like this:
 
 ```
 $ bin/link-checker http://localhost:8080/
-[ BROKEN ] URL:      http://localhost:8080/broken-link/
-           Error:    Error: Not Found
-           Referrer: http://localhost:8080/about/
-           Element:  <a href="/broken-link/">Broken Link</a>
-Crawl complete! 1/22 links were broken (4.5% broken)
+[  BROKEN  ] URL:      http://localhost:8080/broken-link/
+             Error:    Error: Not Found
+             Referrer: https://localhost:8080/about/
+             Element:  <a href="/broken-link/">Broken Link</a>
+[ INSECURE ] URL:      http://anotherhost/external.js
+             Error:    Insecure resources cannot be loaded from secured URLs
+             Referrer: https://localhost:8080/about/
+             Element:  <script src="http://anotherhost/external.js"></script>
+
+Crawl complete!
+1/22 links were broken (4.54%)
+1/22 insecure resources loaded from secure URLs (4.54%)
 ```
 
 ### Options
@@ -47,9 +54,12 @@ Crawl complete! 1/22 links were broken (4.5% broken)
 -h, --help               output usage information
 -c, --concurrency <num>  How many links to check concurrently. Default: 5
 -t, --threshold <num>    Exit with error if this many broken links are found. Percentage of broken/total if < 1, count of total broken links if >= 1
+-B, --no-broken          Don’t check for broken links
 -A, --no-assets          Don’t check linked assets like JavaScript and CSS
 -I, --no-images          Don’t check images
 -L, --no-links           Don’t check hyperlinks
+-S, --no-insecure        Don’t check for insecure resource loading
+-m, --minimal            Print minimal messages only showing the type of error, url, and referrer
 -v, --verbose            Be more verbose
 ```
 

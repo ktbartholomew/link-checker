@@ -8,11 +8,19 @@ program
 .arguments('<url>')
 .option('-c, --concurrency <num>', 'How many links to check concurrently. Default: 5', parseInt, 5)
 .option('-t, --threshold <num>', 'Exit with error if this many broken links are found. Percentage of broken/total if < 1, count of total broken links if >= 1', parseFloat, 0.05)
+.option('-B, --no-broken', 'Don’t check for broken links')
 .option('-A, --no-assets', 'Don’t check linked assets like JavaScript and CSS')
 .option('-I, --no-images', 'Don’t check images')
 .option('-L, --no-links', 'Don’t check hyperlinks')
+.option('-S, --no-insecure', 'Don’t check for linked resources loaded over HTTP when accessing HTTPS urls')
+.option('-m, --minimal', 'Only display the error type and the URL')
 .option('-v, --verbose', 'Be more verbose')
 .action(function (url, env) {
+  if (!program.broken && !program.insecure) {
+    console.log('Broken link checks and insecure link checks are both disabled. There is nothing to do.');
+    process.exit(0);
+  }
+
   cliHandler(url);
 });
 
