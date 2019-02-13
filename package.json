@@ -13,7 +13,7 @@
     "jsdom": "^7.2.2",
     "lodash": "^4.0.0",
     "q": "^1.4.1",
-    "superagent": "^1.7.0"
+    "superagent": "^3.7.0"
   },
   "bin": {
     "link-checker": "bin/link-checker"
